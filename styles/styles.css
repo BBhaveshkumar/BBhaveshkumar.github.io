@@ -1,80 +1,308 @@
 :root {
   --primary-color: #eae06c;
- /* Add these new styles for the contact section */
+  --secondary-color: #f5f5f5;
+  --background-color: #FEF3E2;
+  --text-color: #333333;
+  --card-background: #ffffff;
+  --accent-color: #007bff;
+  --accent-hover: #0056b3;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+}
+
+.name {
+  font-size: 2.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.nav-menu {
+  background-color: var(--text-color);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item {
+  margin: 0 1rem;
+}
+
+.nav-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color);
+}
+
+.section {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  color: var(--text-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skill-item {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.projects-grid,
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card,
+.certification-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover,
+.certification-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image,
+.certification-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info,
+.certification-content {
+  padding: 1.5rem;
+}
+
+.project-title,
+.certification-content h3 {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-description,
+.certification-content p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-details {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.project-details li {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
 .contact-intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    color: #666;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: #666;
 }
 
 .contact-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .contact-card {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s ease;
+  background: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .contact-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .contact-card h3 {
-    color: #333;
-    margin-bottom: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
 }
 
 .contact-card p {
-    color: #666;
-    margin-bottom: 1.5rem;
+  color: #666;
+  margin-bottom: 1.5rem;
 }
 
 .contact-button {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .contact-button:hover {
-    background-color: #0056b3;
+  background-color: var(--accent-hover);
 }
 
-/* Google Form container styles */
 .google-form-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--card-background);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .google-form-container iframe {
-    width: 100%;
-    min-height: 800px;
-    border: none;
+  width: 100%;
+  min-height: 800px;
+  border: none;
+}
+
+.footer {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 @media (max-width: 768px) {
-    .contact-options {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-card {
-        padding: 1.5rem;
-    }
+  .container {
+    padding: 1rem;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+  
+  .projects-grid,
+  .certifications-grid,
+  .contact-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-card {
+    padding: 1.5rem;
+  }
 }
-
