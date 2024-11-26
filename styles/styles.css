@@ -1,406 +1,55 @@
-/* Reset and Base Styles */
-:root {
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary-color: #64748b;
-    --background-light: #f8fafc;
-    --background-dark: #1e293b;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --text-light: #f8fafc;
-    --border-color: #e2e8f0;
-    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --transition-speed: 0.3s;
+/* Add this at the beginning of your CSS file */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Rest of your CSS remains the same */
+
+/* Add this for better button styling */
+.resume-btn,
+.submit-btn,
+.project-card button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
-html {
-    scroll-behavior: smooth;
+.resume-btn:hover,
+.submit-btn:hover,
+.project-card button:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: var(--text-primary);
-    background-color: var(--background-light);
-}
-
-/* Layout */
-.section-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Header Styles */
-.header {
-    background: var(--background-dark);
-    color: var(--text-light);
-    padding: 2rem 0;
-}
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.profile-container {
-    text-align: center;
-}
-
-.profile-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 4px solid var(--primary-color);
-    object-fit: cover;
-    margin-bottom: 1rem;
-}
-
-.name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.title {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-.header-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Navigation */
-.nav-menu {
-    background: var(--background-dark);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 1rem 0;
-}
-
-.nav-link {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: all var(--transition-speed);
-}
-
-.nav-link:hover {
-    background-color: var(--primary-color);
-}
-
-/* Section Styles */
-.section {
-    padding: 4rem 0;
-    background: white;
-    margin-bottom: 2rem;
-    box-shadow: var(--card-shadow);
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: var(--text-primary);
-}
-
-/* Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
-.skill-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: var(--card-shadow);
-    text-align: center;
-    transition: transform var(--transition-speed);
-}
-
-.skill-card:hover {
-    transform: translateY(-5px);
-}
-
-.skill-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-/* Projects Section */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
-.project-card {
-    background: white;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: transform var(--transition-speed);
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-image-container {
-    position: relative;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-}
-
-.project-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-highlights {
-    list-style: none;
-    margin: 1rem 0;
-}
-
-.project-highlights li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.project-highlights li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-}
-
-.project-link {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    transition: background-color var(--transition-speed);
-}
-
-.project-link:hover {
-    background-color: var(--primary-dark);
-}
-
-/* Certifications Section */
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
-.certification-card {
-    background: white;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: transform var(--transition-speed);
-}
-
-.certification-card:hover {
-    transform: translateY(-5px);
-}
-
-.certification-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.certification-content {
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.cert-link {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    transition: background-color var(--transition-speed);
-}
-
-.cert-link:hover {
-    background-color: var(--primary-dark);
-}
-
-/* Contact Section */
-.contact-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.contact-intro {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--text-secondary);
-}
-
-.contact-form-container {
-    background: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: var(--card-shadow);
-}
-
-.contact-form-container iframe {
-    width: 100%;
-    min-height: 800px;
-    border: none;
-}
-
-/* Social Links */
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.social-link {
-    color: var(--text-light);
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: all var(--transition-speed);
-}
-
-.social-link:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-/* Resume Button */
-.resume-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    transition: background-color var(--transition-speed);
-}
-
-.resume-btn:hover {
-    background-color: var(--primary-dark);
-}
-
-/* Footer */
-.footer {
-    background: var(--background-dark);
-    color: var(--text-light);
-    padding: 2rem 0;
-    margin-top: 4rem;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    text-align: center;
-}
-
-.copyright {
-    margin-top: 1rem;
-    color: var(--text-secondary);
-}
-
-/* Responsive Design */
+/* Add responsive design for smaller screens */
 @media (max-width: 768px) {
-    .header-content {
-        text-align: center;
-    }
+  .projects-grid,
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .nav-list {
-        flex-direction: column;
-        align-items: center;
-    }
+  .header {
+    padding: 1rem 0;
+  }
 
-    .nav-link {
-        display: block;
-        padding: 0.75rem 1rem;
-    }
+  .name {
+    font-size: 2rem;
+  }
 
-    .skills-grid,
-    .projects-grid,
-    .certifications-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-container {
-        padding: 1rem;
-    }
-
-    .project-card,
-    .certification-card {
-        margin: 0 1rem;
-    }
+  .title {
+    font-size: 1rem;
+  }
 }
-
-@media (min-width: 768px) {
-    .header-content {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .header-actions {
-        align-items: flex-end;
-    }
-}
-
